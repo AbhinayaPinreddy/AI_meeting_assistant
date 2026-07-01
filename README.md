@@ -78,6 +78,7 @@ pipeline.
 -   `speaker_api.py` -- Connects to the Google Colab speaker diarization
     API.
 -   `pdf_generator.py` -- Generates downloadable meeting PDFs.
+-    `rag.py` -- To chat with the database.
 
 ### backend/uploads/
 
