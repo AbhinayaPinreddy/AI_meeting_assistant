@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = "postgresql://postgres:Abhi%401234@localhost:5432/meeting_assistant"
+DATABASE_URL = "YOUR_DATABASE_URL"
 
 engine = create_engine(DATABASE_URL)
 
