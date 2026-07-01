@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #111827;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f3f4f6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  color: #60a5fa;
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #93c5fd;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #93c5fd;
+}
+
+h4 {
+  color: #f3f4f6;
+  margin: 0;
+}
+
+.card {
+  background: #1f2937;
+  padding: 25px;
+  margin-top: 20px;
+  border-radius: 12px;
+  border: 1px solid #374151;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+input[type="file"] {
+  color: #f3f4f6;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+.meeting-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #273549;
+}
+
+.meeting-item:hover {
+  background: #374151;
+  border-color: #60a5fa;
+}
+
+.loading {
+  color: #60a5fa;
+  font-weight: bold;
+}

@@ -1,0 +1,50 @@
+# ===========================
+# Python
+# ===========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ===========================
+# Backend
+# ===========================
+backend/venv/
+backend/.env
+backend/uploads/
+backend/pdfs/
+backend/chroma_db/
+backend/test_db.py
+backend/test_diarization.py
+backend/test_models.py
+backend/test_summary.py
+
+# Python cache
+backend/**/__pycache__/
+
+# ===========================
+# Frontend
+# ===========================
+frontend/node_modules/
+frontend/dist/
+
+# ===========================
+# VS Code
+# ===========================
+.vscode/
+
+# ===========================
+# Operating System
+# ===========================
+.DS_Store
+Thumbs.db
+
+# ===========================
+# Logs
+# ===========================
+*.log
+
+# ===========================
+# Colab
+# ===========================
+.ipynb_checkpoints/
