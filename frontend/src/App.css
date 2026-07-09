@@ -1,22 +1,30 @@
 body {
   margin: 0;
   padding: 0;
-  background: #111827;
-  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a;
+  font-family: "Segoe UI", Arial, sans-serif;
   color: #f3f4f6;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1150px;
   margin: auto;
-  padding: 30px;
+  padding: 35px;
 }
 
 h1 {
   text-align: center;
   color: #60a5fa;
-  font-size: 48px;
-  margin-bottom: 30px;
+  font-size: 52px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 18px;
+  margin-bottom: 35px;
 }
 
 h2 {
@@ -35,12 +43,12 @@ h4 {
 }
 
 .card {
-  background: #1f2937;
-  padding: 25px;
-  margin-top: 20px;
-  border-radius: 12px;
-  border: 1px solid #374151;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+  background: #1e293b;
+  padding: 28px;
+  margin-top: 25px;
+  border-radius: 16px;
+  border: 1px solid #334155;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 button {
@@ -48,42 +56,79 @@ button {
   color: white;
   border: none;
   padding: 12px 24px;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.25s ease;
 }
 
 button:hover {
   background: #1d4ed8;
+  transform: translateY(-2px);
 }
 
 input[type="file"] {
+  width: 100%;
+  padding: 10px;
   color: #f3f4f6;
+  background: #0f172a;
+  border: 1px solid #475569;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: white;
+  font-size: 15px;
+  resize: none;
+}
+
+textarea:focus,
+input[type="file"]:focus {
+  outline: none;
+  border-color: #3b82f6;
 }
 
 pre {
   white-space: pre-wrap;
   word-wrap: break-word;
-  line-height: 1.6;
+  line-height: 1.8;
   color: #e5e7eb;
+  background: #0f172a;
+  padding: 18px;
+  border-radius: 10px;
 }
 
 .meeting-item {
-  padding: 12px;
-  margin-bottom: 10px;
-  border: 1px solid #4b5563;
-  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #475569;
+  border-radius: 12px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.25s ease;
   background: #273549;
 }
 
 .meeting-item:hover {
-  background: #374151;
+  background: #334155;
   border-color: #60a5fa;
+  transform: translateY(-2px);
 }
 
 .loading {
   color: #60a5fa;
   font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+  color: #94a3b8;
+  margin: 40px 0 15px;
+  font-size: 14px;
 }

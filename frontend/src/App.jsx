@@ -16,7 +16,11 @@ function App() {
 
   return (
     <div className="container">
-      <h1>AI Meeting Assistant</h1>
+      <h1>Welcome to MeetingHub</h1>
+
+      <p className="subtitle">
+        Turn every meeting into searchable insights with AI.
+      </p>
 
       <UploadMeeting
         setTranscript={setTranscript}
