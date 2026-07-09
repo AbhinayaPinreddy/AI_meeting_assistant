@@ -18,7 +18,7 @@ function UploadMeeting({ setTranscript, setSummary, setSpeakerTranscript }) {
       setLoading(true);
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/upload",
+        "https://ai-meeting-assistant-backend-3gqm.onrender.com/upload",
         formData
       );
 

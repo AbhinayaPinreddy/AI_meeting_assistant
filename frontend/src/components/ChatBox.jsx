@@ -13,7 +13,7 @@ function ChatBox() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/chat",
+        "https://ai-meeting-assistant-backend-3gqm.onrender.com/chat",
         {
           question: question,
         }

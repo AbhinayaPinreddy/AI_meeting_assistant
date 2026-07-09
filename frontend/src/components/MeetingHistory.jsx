@@ -14,7 +14,7 @@ function MeetingHistory({
 
   const fetchMeetings = async () => {
     const response = await axios.get(
-      "http://127.0.0.1:8000/meeting-history"
+      "https://ai-meeting-assistant-backend-3gqm.onrender.com/meeting-history"
     );
 
     setMeetings(response.data);
@@ -22,7 +22,7 @@ function MeetingHistory({
 
   const loadMeeting = async (id) => {
     const response = await axios.get(
-      `http://127.0.0.1:8000/meeting/${id}`
+      `https://ai-meeting-assistant-backend-3gqm.onrender.com/meeting/${id}`
     );
 
     setTranscript(response.data.transcript);
@@ -87,7 +87,7 @@ function MeetingHistory({
             <button
               onClick={() =>
                 window.open(
-                  `http://127.0.0.1:8000/download/${meeting.id}`,
+                  `https://ai-meeting-assistant-backend-3gqm.onrender.com/download/${meeting.id}`,
                   "_blank"
                 )
               }
