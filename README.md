@@ -103,7 +103,58 @@ microservice.
 Stores screenshots used in this README.
 
 ------------------------------------------------------------------------
+# Deployment
 
+### Frontend
+
+The React frontend is deployed on **Vercel**.
+
+**Live Application**
+
+https://ai-meeting-assistant-git-main-enterpriseassistant.vercel.app/
+
+### Backend
+
+The FastAPI backend is deployed on **Render**.
+
+**Backend API**
+
+https://ai-meeting-assistant-backend-3gqm.onrender.com
+
+### Database
+
+The application uses **Neon PostgreSQL** to store meeting information, transcripts, speaker transcripts, summaries, and action items.
+
+### AI Inference Service
+
+To keep deployment completely free, the computationally intensive AI tasks are executed on **Google Colab**.
+
+The Colab service performs:
+
+- Speaker diarization using PyAnnote
+- Speech-to-text transcription using Whisper
+
+The backend communicates with the Colab notebook through an **ngrok** public endpoint.
+
+### Deployment Architecture
+
+```text
+                 Vercel (React Frontend)
+                          │
+                          ▼
+                 Render (FastAPI Backend)
+                          │
+              ┌───────────┴───────────┐
+              ▼                       ▼
+     Neon PostgreSQL         Google Colab
+     (Meeting Storage)   (Whisper + PyAnnote)
+                                      │
+                                      ▼
+                               Groq Llama 3.3
+                    (Summary Generation & AI Chat)
+```
+
+> **Note:** Since Whisper and Speaker Diarization are hosted on Google Colab, the Colab notebook must be running before uploading a meeting. The frontend communicates with the deployed backend, which forwards audio processing requests to the Colab inference service.
 # How It Works
 
 1.  User uploads an audio meeting.
