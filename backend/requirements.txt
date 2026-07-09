@@ -12,6 +12,5 @@ requests==2.34.2
 pydantic==2.13.4
 
 reportlab==5.0.0
-pydub==0.25.1
 
 numpy==2.4.6
