@@ -11,7 +11,7 @@ def get_meeting_data(audio_path):
         response = requests.post(
             COLAB_URL,
             files={"file": f},
-            timeout=60
+            timeout=600
         )
 
         print("Response received:", response.status_code)
