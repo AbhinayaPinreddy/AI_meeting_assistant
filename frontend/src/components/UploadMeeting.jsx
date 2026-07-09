@@ -21,10 +21,10 @@ function UploadMeeting({ setTranscript, setSummary, setSpeakerTranscript }) {
         "https://ai-meeting-assistant-backend-3gqm.onrender.com/upload",
         formData
       );
-
-      setTranscript(response.data.transcript);
-      setSummary(response.data.summary);
-      setSpeakerTranscript(response.data.speaker_transcript);
+      console.log("UPLOAD RESPONSE:", response.data);
+      setTranscript(response.data.transcript || "");
+      setSummary(response.data.summary || "");
+      setSpeakerTranscript(response.data.speaker_transcript || []);
 
       setLoading(false);
     } catch (error) {
