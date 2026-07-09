@@ -311,3 +311,37 @@ def chat(request: ChatRequest):
     return {
         "answer": answer
     }
+
+@app.delete("/meeting/{meeting_id}")
+def delete_meeting(meeting_id: int):
+
+    db = SessionLocal()
+
+    meeting = db.query(Meeting).filter(
+        Meeting.id == meeting_id
+    ).first()
+
+    if meeting is None:
+        db.close()
+        return {"error": "Meeting not found"}
+
+    # Delete transcript
+    db.query(Transcript).filter(
+        Transcript.meeting_id == meeting_id
+    ).delete()
+
+    # Delete summary
+    db.query(Summary).filter(
+        Summary.meeting_id == meeting_id
+    ).delete()
+
+    # Delete meeting
+    db.delete(meeting)
+
+    db.commit()
+
+    db.close()
+
+    return {
+        "message": "Meeting deleted successfully"
+    }

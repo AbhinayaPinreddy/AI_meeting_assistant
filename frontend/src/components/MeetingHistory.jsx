@@ -29,7 +29,31 @@ function MeetingHistory({
     setSummary(response.data.summary);
     setSpeakerTranscript(response.data.speaker_transcript);
   };
+  const deleteMeeting = async (id) => {
 
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this meeting?"
+    );
+
+    if (!confirmDelete) return;
+
+    try {
+      await axios.delete(
+        `https://ai-meeting-assistant-backend-3gqm.onrender.com/meeting/${id}`
+      );
+
+      alert("Meeting deleted successfully!");
+      setTranscript("");
+      setSummary("");
+      setSpeakerTranscript([]);
+
+      fetchMeetings(); // Refresh the meeting list
+
+    } catch (error) {
+    console.error(error);
+    alert("Failed to delete meeting.");
+  }
+};
   return (
     <div className="card">
       <h2>📁 Meeting History</h2>
@@ -68,7 +92,7 @@ function MeetingHistory({
               lineHeight: "1.8"
             }}
           >
-            📅 Uploaded: {meeting.created_at}
+            </p>📅 Uploaded: {meeting.created_at}<p>
             <p>⏱ Duration: {meeting.duration}</p>
           </p>
 
@@ -93,6 +117,11 @@ function MeetingHistory({
               }
             >
               📄 Download PDF
+            </button>
+            <button
+                onClick={() => deleteMeeting(meeting.id)}
+            >
+             🗑 Delete
             </button>
           </div>
         </div>
