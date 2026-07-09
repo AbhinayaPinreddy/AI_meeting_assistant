@@ -80,7 +80,6 @@ async def upload_audio(file: UploadFile = File(...)):
         print("Meeting saved successfully!")
 
         # Generate transcript using Whisper
-        transcript_text = transcribe_audio(filepath)
 
         print("Transcription completed!")
 
