@@ -12,7 +12,6 @@ from models import Meeting
 from models import Transcript
 from models import Summary
 
-from services.transcription import transcribe_audio
 from services.summarizer import generate_summary
 from services.pdf_generator import create_pdf
 from services.duration import get_audio_duration
