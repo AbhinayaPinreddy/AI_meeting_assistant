@@ -16,7 +16,7 @@ from services.transcription import transcribe_audio
 from services.summarizer import generate_summary
 from services.pdf_generator import create_pdf
 from services.duration import get_audio_duration
-from speaker_api import get_speaker_transcript
+from speaker_api import get_meeting_data
 
 
 
@@ -56,7 +56,9 @@ async def upload_audio(file: UploadFile = File(...)):
     with open(filepath, "wb") as buffer:
         buffer.write(await file.read())
     
-    speaker_transcript = get_speaker_transcript(filepath)
+    meeting_data = get_meeting_data(filepath)
+    speaker_transcript = meeting_data["speaker_transcript"]
+    transcript_text = meeting_data["transcript"]
     duration = get_audio_duration(filepath)
 
     print("Duration:", duration)

@@ -2,7 +2,7 @@ import requests
 
 COLAB_URL = "https://halves-valuables-earwig.ngrok-free.dev/diarize"
 
-def get_speaker_transcript(audio_path):
+def get_meeting_data(audio_path):
     print("Opening file...")
 
     with open(audio_path, "rb") as f:
@@ -20,4 +20,4 @@ def get_speaker_transcript(audio_path):
 
     print("Parsing JSON...")
 
-    return response.json()["speaker_transcript"]
+    return response.json()
